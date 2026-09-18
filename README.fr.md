@@ -155,6 +155,31 @@ fichier, et c'est celui-là — seulement celui-là — qui part.
 la raison est en haut — la ligne la plus récente d'abord. Votre mot de passe n'y
 apparaît jamais, même quand un serveur vous renvoie votre échec de connexion.
 
+### Laisser un agent travailler sur le projet
+
+**AI Agents**, dans la barre d'activité, applique une compétence spécialisée au
+projet ouvert et vous montre ce qu'il veut changer avant que rien ne change.
+
+1. Cliquez un agent — **SEO Agent** ou **Security Agent** pour commencer.
+2. La première fois, DigiDev demande quel assistant fera le travail : Claude
+   Code, OpenAI Codex ou Gemini CLI. Il doit être installé et connecté sur
+   votre Mac ; sinon DigiDev ouvre la page d'installation ou un terminal avec
+   la commande de connexion. **DigiDev ne demande jamais de clé et n'en
+   conserve aucune** — l'outil de l'assistant garde sa propre session.
+3. L'agent travaille sur une **copie** de votre projet. Vos fichiers ne sont
+   pas sur son chemin.
+4. Quand il termine, son rapport s'ouvre à côté de l'éditeur et **Proposed
+   changes** liste chaque fichier qu'il veut modifier. Cliquez-en un pour voir
+   la différence ; **Apply** ou **Discard** chacun, ou tous d'un coup.
+
+Le Security Agent analyse, rapporte par gravité, et **demande la permission**
+avant de corriger quoi que ce soit. Répondez avec **Reply to the Agent** — il
+poursuit la même conversation sur la même copie, et c'est seulement alors qu'il
+y a une différence à examiner.
+
+Vos propres agents vont dans `~/.digidev/agents/<nom>/` : un `SKILL.md` et, si
+vous voulez un titre ou une icône, un `agent.json`.
+
 ### Partager un skill avec tous les assistants
 
 Un **skill** est un dossier d'instructions qu'un assistant IA lit avant

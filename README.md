@@ -153,6 +153,30 @@ that file — only that file — is what goes back up.
 reason is at the top of it — newest line first. Your password never appears
 there, even when a server quotes your failed login back at it.
 
+### Let an agent work on the project
+
+**AI Agents**, in the Activity Bar, applies a specialised skill to the open
+project and shows you what it wants to change before anything changes.
+
+1. Click an agent — **SEO Agent** or **Security Agent** to start with.
+2. The first time, DigiDev asks which assistant should do the work: Claude
+   Code, OpenAI Codex or Gemini CLI. It must be installed and signed in on
+   your Mac; if it is not, DigiDev opens the install page or a terminal with
+   the sign-in command. **DigiDev never asks for a key and never holds one** —
+   the assistant's own tool keeps its own session.
+3. The agent works on a **copy** of your project. Your files are not on its
+   path at all.
+4. When it finishes, its report opens beside the editor and **Proposed
+   changes** lists every file it wants to change. Click one to see the
+   difference; **Apply** or **Discard** each, or all at once.
+
+The Security Agent scans, reports by severity, and **asks permission** before
+fixing anything. Answer with **Reply to the Agent** — it continues the same
+conversation on the same copy, and only then is there a diff to review.
+
+Your own agents go in `~/.digidev/agents/<name>/`: a `SKILL.md` and, if you
+want a title or icon, an `agent.json`.
+
 ### Share a skill with every assistant
 
 A **skill** is a folder of instructions an AI assistant reads before doing a
