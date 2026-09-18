@@ -104,12 +104,16 @@ by accident.
 
 Once connected:
 
-| Command | What it does |
-| --- | --- |
-| **Import the Site Locally** | brings the site down into a folder of your choosing |
-| **Deploy Changed Files** | sends back **only** what you changed |
-| **Deploy This File** | sends back the open file |
-| **Deploy Every File** | sends everything, no comparison |
+| Command | What it does | Where to find it |
+| --- | --- | --- |
+| **Import the Site Locally** | brings the site down into a folder of your choosing | Hosting panel |
+| **Deploy Changed Files** | sends back **only** what you changed | the button at the bottom right, or right-click the project folder |
+| **Deploy This File** | sends back the open file | the file's tab, or right-click it |
+| **Deploy Every File** | sends everything, no comparison | right-click the project folder |
+
+Once you are connected, a button appears at the **bottom right** with the name
+of your hosting account. Edit your files, click it, and DigiDev tells you what
+it is about to send before it sends anything.
 
 The first deploy after an import sends nothing: DigiDev recorded what it brought
 down, and compares file contents rather than timestamps. Change one file, and

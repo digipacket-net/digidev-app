@@ -105,12 +105,16 @@ dans un dépôt.
 
 Une fois connecté :
 
-| Commande | Ce qu'elle fait |
-| --- | --- |
-| **Import the Site Locally** | rapatrie le site dans un dossier chez vous |
-| **Deploy Changed Files** | renvoie **seulement** ce que vous avez modifié |
-| **Deploy This File** | renvoie le fichier ouvert |
-| **Deploy Every File** | renvoie tout, sans distinction |
+| Commande | Ce qu'elle fait | Où la trouver |
+| --- | --- | --- |
+| **Import the Site Locally** | rapatrie le site dans un dossier chez vous | panneau Hosting |
+| **Deploy Changed Files** | renvoie **seulement** ce que vous avez modifié | le bouton en bas à droite, ou clic droit sur le dossier du projet |
+| **Deploy This File** | renvoie le fichier ouvert | l'onglet du fichier, ou clic droit dessus |
+| **Deploy Every File** | renvoie tout, sans distinction | clic droit sur le dossier du projet |
+
+Dès que vous êtes connecté, un bouton apparaît **en bas à droite** avec le nom
+de votre compte d'hébergement. Modifiez vos fichiers, cliquez dessus, et DigiDev
+vous dit ce qu'il s'apprête à envoyer avant d'envoyer quoi que ce soit.
 
 Le premier envoi après un import ne renvoie rien : DigiDev sait ce qu'il a
 rapatrié, et compare le contenu réel des fichiers, pas leur date. Modifiez un
