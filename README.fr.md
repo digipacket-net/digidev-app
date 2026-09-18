@@ -116,6 +116,37 @@ Dès que vous êtes connecté, un bouton apparaît **en bas à droite** avec le 
 de votre compte d'hébergement. Modifiez vos fichiers, cliquez dessus, et DigiDev
 vous dit ce qu'il s'apprête à envoyer avant d'envoyer quoi que ce soit.
 
+#### Un dossier que vous aviez déjà
+
+Si le dossier local ne vient pas de **Import the Site Locally**, DigiDev ignore
+où il se place sur le serveur — il enverrait vos fichiers là où le serveur vous
+dépose à la connexion, souvent un niveau au-dessus du site.
+
+Dites-le-lui une fois :
+
+1. Ouvrez votre dossier local et connectez-vous au compte.
+2. Dans **Remote files**, naviguez jusqu'au dossier du site — celui qui contient
+   `index.php` ou `wp-content`.
+3. Cliquez l'icône **lien** à côté : *Link This Folder to the Site*.
+
+Ensuite, le bouton de déploiement envoie là. Rien n'est téléchargé et rien
+n'est touché sur le serveur au moment où vous liez.
+
+Le **premier** envoi après le lien transfère **tous** les fichiers, pas seulement
+ceux que vous avez modifiés. DigiDev n'a pas vu ce qu'il y a sur le serveur et
+ne supposera pas que votre copie lui correspond — le supposer reviendrait à
+sauter en silence les fichiers qui diffèrent vraiment. Les envois suivants sont
+incrémentaux.
+
+#### Envoyer à chaque enregistrement
+
+Activez **`digidev.hosting.deployOnSave`** dans les réglages et chaque
+enregistrement part directement sur le serveur.
+
+Ça ne marche que sur un dossier lié, et c'est désactivé par défaut pour une
+raison : ça écrit sur un site en production sans confirmation. Laissez-le
+désactivé tant que vous travaillez sur un site qui reçoit de vrais visiteurs.
+
 Le premier envoi après un import ne renvoie rien : DigiDev sait ce qu'il a
 rapatrié, et compare le contenu réel des fichiers, pas leur date. Modifiez un
 fichier, et c'est celui-là — seulement celui-là — qui part.

@@ -115,6 +115,36 @@ Once you are connected, a button appears at the **bottom right** with the name
 of your hosting account. Edit your files, click it, and DigiDev tells you what
 it is about to send before it sends anything.
 
+#### A folder you already had
+
+If the local folder did not come from **Import the Site Locally**, DigiDev has
+no idea where it belongs on the server — so it would send your files to
+wherever the server drops you on login, usually one level above the site.
+
+Tell it once:
+
+1. Open your local folder and connect to the account.
+2. In **Remote files**, browse to the site's folder — the one that contains
+   `index.php` or `wp-content`.
+3. Click the **link** icon next to it: *Link This Folder to the Site*.
+
+From then on the deploy button sends there. Nothing is downloaded and nothing
+on the server is touched when you link.
+
+The **first** deploy after linking sends every file, not just the ones you
+changed. DigiDev has not seen what is on the server and will not assume your
+copy matches it — assuming that would mean silently skipping the files that
+actually differ. Deployments after the first are incremental.
+
+#### Sending on every save
+
+Turn on **`digidev.hosting.deployOnSave`** in Settings and each save goes
+straight to the server.
+
+It only works on a linked folder, and it is off by default for a reason: it
+writes to a live site with no confirmation. Leave it off while you are working
+on something that is serving real visitors.
+
 The first deploy after an import sends nothing: DigiDev recorded what it brought
 down, and compares file contents rather than timestamps. Change one file, and
 that file — only that file — is what goes back up.
