@@ -153,6 +153,32 @@ that file — only that file — is what goes back up.
 reason is at the top of it — newest line first. Your password never appears
 there, even when a server quotes your failed login back at it.
 
+### Share a skill with every assistant
+
+A **skill** is a folder of instructions an AI assistant reads before doing a
+particular job — reviewing a theme, writing a migration, following your house
+style. Claude Code calls them skills; Codex and Gemini have no such thing, and
+read a single file at the root of the project instead.
+
+**Project Launcher → Skills** hides that difference.
+
+1. **Import a Skill** — point it at a folder or a `.zip`. It lands in your
+   library at `~/.digidev/skills/`, where every project can reach it.
+2. **Apply to This Project** — pick which assistants should see it. The skill is
+   written once to `.claude/skills/<name>/`, and the assistants that cannot read
+   a skill folder are pointed at that copy from `AGENTS.md` and `GEMINI.md`.
+3. **Make Available in Every Project** — copies it to `~/.claude/skills/`, which
+   is where Claude Code looks for skills that apply everywhere.
+
+Anything you wrote by hand in `AGENTS.md` or `GEMINI.md` is left alone. DigiDev
+only ever rewrites what is between its own two marker comments, so applying a
+second skill updates that block instead of adding another one, and removing the
+last skill takes the block with it.
+
+A skill without a `description` in its `SKILL.md` is refused. Without one, an
+assistant has no way to know when the skill applies — it would look installed
+and do nothing.
+
 ### Add extensions
 
 Two routes, and neither goes through a marketplace.

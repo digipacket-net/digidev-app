@@ -155,6 +155,33 @@ fichier, et c'est celui-là — seulement celui-là — qui part.
 la raison est en haut — la ligne la plus récente d'abord. Votre mot de passe n'y
 apparaît jamais, même quand un serveur vous renvoie votre échec de connexion.
 
+### Partager un skill avec tous les assistants
+
+Un **skill** est un dossier d'instructions qu'un assistant IA lit avant
+d'effectuer un travail précis — relire un thème, écrire une migration, suivre
+vos conventions maison. Claude Code les appelle des skills ; Codex et Gemini
+n'ont pas cette notion et lisent un seul fichier à la racine du projet.
+
+**Project Launcher → Skills** efface cette différence.
+
+1. **Import a Skill** — désignez un dossier ou un `.zip`. Il rejoint votre
+   bibliothèque dans `~/.digidev/skills/`, accessible depuis tous vos projets.
+2. **Apply to This Project** — choisissez quels assistants doivent le voir. Le
+   skill est écrit **une seule fois** dans `.claude/skills/<nom>/`, et ceux qui
+   ne savent pas lire un dossier de skill sont pointés vers cette copie depuis
+   `AGENTS.md` et `GEMINI.md`.
+3. **Make Available in Every Project** — le copie dans `~/.claude/skills/`, là
+   où Claude Code cherche les skills valables partout.
+
+Ce que vous avez écrit à la main dans `AGENTS.md` ou `GEMINI.md` n'est jamais
+touché. DigiDev ne réécrit que ce qui se trouve entre ses deux commentaires
+repères : appliquer un second skill met ce bloc à jour au lieu d'en ajouter un
+autre, et retirer le dernier skill emporte le bloc avec lui.
+
+Un skill sans `description` dans son `SKILL.md` est refusé. Sans elle, un
+assistant n'a aucun moyen de savoir quand l'utiliser — il paraîtrait installé
+et ne ferait rien.
+
 ### Ajouter des extensions
 
 Deux chemins, et aucun ne passe par une place de marché.
