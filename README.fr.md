@@ -125,9 +125,27 @@ apparaît jamais, même quand un serveur vous renvoie votre échec de connexion.
 Deux chemins, et aucun ne passe par une place de marché.
 
 **La liste dans le panneau Extensions** propose des extensions choisies, prises
-sur [Open VSX](https://open-vsx.org). Chaque téléchargement est comparé à
+sur [Open VSX](https://open-vsx.org), regroupées pour qu'on y trouve ce qu'on
+cherche :
+
+| Groupe | Ce qu'il contient |
+| --- | --- |
+| **AI** | ChatGPT, Gemini Code Assist |
+| **PHP** | Intelephense, DocBlocker, résolveur d'espaces de noms |
+| **Laravel** | Syntaxe Blade, IntelliSense supplémentaire |
+| **Web** | Prettier, ESLint, Tailwind, renommage de balise, Live Server |
+| **Tools** | GitLens, Error Lens, EditorConfig, Path IntelliSense, dotenv, YAML, correcteur orthographique |
+
+Chacune s'installe et se désinstalle depuis cette liste — sans compte de place
+de marché, sans `.vsix` à chercher. Chaque téléchargement est comparé à
 l'empreinte `sha256` publiée par le registre ; si elle ne correspond pas, le
 fichier est supprimé au lieu d'être installé.
+
+Pour ajouter les vôtres, créez `~/.digidev/extensions.json` :
+
+```json
+{ "extensions": [{ "id": "publisher.name", "group": "Mine", "note": "pourquoi" }] }
+```
 
 **Un fichier `.vsix`** que vous avez vous-même : `Extensions: Install from
 VSIX…` depuis la palette de commandes (`⇧⌘P`).

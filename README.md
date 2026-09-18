@@ -123,10 +123,26 @@ there, even when a server quotes your failed login back at it.
 
 Two routes, and neither goes through a marketplace.
 
-**The list in the Extensions panel** offers a curated set taken from
-[Open VSX](https://open-vsx.org). Every download is checked against the `sha256`
-the registry publishes; if it does not match, the file is deleted instead of
-installed.
+**The list in the Extensions panel** offers a chosen set taken from
+[Open VSX](https://open-vsx.org), grouped so you can find what you came for:
+
+| Group | What is in it |
+| --- | --- |
+| **AI** | ChatGPT, Gemini Code Assist |
+| **PHP** | Intelephense, DocBlocker, namespace resolver |
+| **Laravel** | Blade syntax, extra IntelliSense |
+| **Web** | Prettier, ESLint, Tailwind, auto rename tag, Live Server |
+| **Tools** | GitLens, Error Lens, EditorConfig, Path IntelliSense, dotenv, YAML, spell checker |
+
+Each one installs and uninstalls from that list — no marketplace account, no
+`.vsix` to find. Every download is checked against the `sha256` the registry
+publishes; if it does not match, the file is deleted instead of installed.
+
+To add your own, put a file at `~/.digidev/extensions.json`:
+
+```json
+{ "extensions": [{ "id": "publisher.name", "group": "Mine", "note": "why" }] }
+```
 
 **A `.vsix` file** of your own: `Extensions: Install from VSIX…` from the
 command palette (`⇧⌘P`).
