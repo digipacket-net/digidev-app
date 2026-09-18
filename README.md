@@ -22,8 +22,9 @@
 ## What it is
 
 A full editor that also knows how to stand up a local development stack and
-work inside it. Fill in one form and it installs a WordPress site, creates its
-database, and writes its `wp-config.php` against the local server.
+work inside it. Fill in one form and it installs WordPress, Laravel, Symfony or
+a Node server, creates the database, and writes the configuration against the
+local server.
 
 It also connects to your hosting, brings a live site down to your machine, and
 afterwards sends back only the files you actually changed.
@@ -59,11 +60,24 @@ page.
 
 ## First steps
 
-### Stand up a WordPress site
+### Stand up a site
 
-Click **Project Launcher** in the side bar, pick the *WordPress* recipe, fill in
-the form. DigiDev creates the folder, creates the database, and writes
-`wp-config.php` against the local server.
+Click **Project Launcher** in the side bar, pick a recipe, fill in the form.
+
+| Recipe | What you get | What you need installed |
+| --- | --- | --- |
+| **WordPress** | The latest release, its database, and `wp-config.php` written against the local server | PHP 7.4 or newer |
+| **Laravel** | A new Laravel application, `.env` written, application key generated, first migrations run | PHP 8.2 or newer, [Composer](https://getcomposer.org) |
+| **Symfony** | A new Symfony application, `.env.local` written, optionally the full web application pack | PHP 8.2 or newer, [Composer](https://getcomposer.org) |
+| **Node starter** | A small Express server, in JavaScript or TypeScript, with its dependencies installed | [Node.js](https://nodejs.org) 20.6 or newer |
+
+DigiDev never asks you to type database credentials into a config file: it
+writes what it actually created, so nothing is stale the first time the server
+moves.
+
+The PHP recipes send mail nowhere real — Laravel to its log, Symfony to a null
+mailer. A local copy of a site should not be able to send a password reset to an
+actual customer by accident.
 
 **DigiDev does not install PHP or MySQL.** It finds what is already on your
 machine — DBngin, Herd, MAMP, XAMPP, Homebrew — and runs *its own* instance, on
@@ -100,6 +114,10 @@ Once connected:
 The first deploy after an import sends nothing: DigiDev recorded what it brought
 down, and compares file contents rather than timestamps. Change one file, and
 that file — only that file — is what goes back up.
+
+**Server log** is the third view in that panel. When a transfer fails, the
+reason is at the top of it — newest line first. Your password never appears
+there, even when a server quotes your failed login back at it.
 
 ### Add extensions
 

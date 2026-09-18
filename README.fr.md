@@ -22,8 +22,9 @@
 ## Ce que c'est
 
 Un éditeur complet qui sait, en plus, monter une pile de développement locale et
-s'y connecter. Vous remplissez un formulaire, il installe un WordPress avec sa
-base de données et son `wp-config.php` déjà écrit contre le serveur local.
+s'y connecter. Vous remplissez un formulaire, il installe WordPress, Laravel,
+Symfony ou un serveur Node, crée la base de données et écrit la configuration
+contre le serveur local.
 
 Il sait aussi se connecter à votre hébergement, rapatrier un site chez vous,
 et ne renvoyer ensuite que les fichiers que vous avez modifiés.
@@ -59,11 +60,25 @@ Releases de ce dépôt.
 
 ## Premiers pas
 
-### Monter un site WordPress
+### Monter un site
 
-Cliquez sur **Project Launcher** dans la barre latérale, choisissez la recette
-*WordPress*, remplissez le formulaire. DigiDev crée le dossier, la base de
-données, et écrit le `wp-config.php` contre le serveur local.
+Cliquez sur **Project Launcher** dans la barre latérale, choisissez une recette,
+remplissez le formulaire.
+
+| Recette | Ce que vous obtenez | Ce qu'il faut avoir installé |
+| --- | --- | --- |
+| **WordPress** | La dernière version, sa base, et le `wp-config.php` écrit contre le serveur local | PHP 7.4 ou plus récent |
+| **Laravel** | Une application Laravel neuve, `.env` écrit, clé générée, premières migrations passées | PHP 8.2 ou plus récent, [Composer](https://getcomposer.org) |
+| **Symfony** | Une application Symfony neuve, `.env.local` écrit, avec ou sans le pack web complet | PHP 8.2 ou plus récent, [Composer](https://getcomposer.org) |
+| **Node starter** | Un petit serveur Express, en JavaScript ou TypeScript, dépendances installées | [Node.js](https://nodejs.org) 20.6 ou plus récent |
+
+DigiDev ne vous demande jamais de taper des identifiants de base dans un fichier
+de configuration : il écrit ce qu'il a réellement créé, donc rien n'est périmé
+le jour où le serveur change de port.
+
+Les recettes PHP envoient le courrier nulle part — Laravel vers son journal,
+Symfony vers un expéditeur vide. Une copie locale d'un site ne doit pas pouvoir
+envoyer une réinitialisation de mot de passe à un vrai client par accident.
 
 **PHP et MySQL ne sont pas installés par DigiDev.** Il cherche ce que vous avez
 déjà sur la machine — DBngin, Herd, MAMP, XAMPP, Homebrew — et lance *sa propre*
@@ -100,6 +115,10 @@ Une fois connecté :
 Le premier envoi après un import ne renvoie rien : DigiDev sait ce qu'il a
 rapatrié, et compare le contenu réel des fichiers, pas leur date. Modifiez un
 fichier, et c'est celui-là — seulement celui-là — qui part.
+
+**Logs serveur** est la troisième vue de ce panneau. Quand un transfert échoue,
+la raison est en haut — la ligne la plus récente d'abord. Votre mot de passe n'y
+apparaît jamais, même quand un serveur vous renvoie votre échec de connexion.
 
 ### Ajouter des extensions
 
