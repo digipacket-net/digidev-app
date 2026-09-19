@@ -173,9 +173,11 @@ projet ouvert et vous montre ce qu'il veut changer avant que rien ne change.
    la différence ; **Apply** ou **Discard** chacun, ou tous d'un coup.
 
 Le Security Agent analyse, rapporte par gravité, et **demande la permission**
-avant de corriger quoi que ce soit. Répondez avec **Reply to the Agent** — il
-poursuit la même conversation sur la même copie, et c'est seulement alors qu'il
-y a une différence à examiner.
+avant de corriger quoi que ce soit. Quand il s'arrête pour demander, vous voyez
+sa question et trois boutons — **Yes**, **No**, **Reply…** — et les mêmes Yes et
+No restent sur la ligne de l'agent tant que vous n'avez pas répondu. Yes poursuit
+la même conversation sur la même copie, et c'est seulement alors qu'il y a une
+différence à examiner.
 
 **Ce que coûte un passage.** Rien en argent, si vous vous êtes connecté avec un
 abonnement Claude, ChatGPT ou Google : DigiDev pilote l'outil de l'assistant,

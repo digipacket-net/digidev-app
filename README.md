@@ -171,8 +171,10 @@ project and shows you what it wants to change before anything changes.
    difference; **Apply** or **Discard** each, or all at once.
 
 The Security Agent scans, reports by severity, and **asks permission** before
-fixing anything. Answer with **Reply to the Agent** — it continues the same
-conversation on the same copy, and only then is there a diff to review.
+fixing anything. When it stops to ask, you get its question and three buttons —
+**Yes**, **No**, **Reply…** — and the same Yes and No stay on the agent's row
+until you answer. Yes continues the same conversation on the same copy, and only
+then is there a diff to review.
 
 **What a run costs you.** Nothing in money, if you signed in with a Claude,
 ChatGPT or Google subscription: DigiDev drives the assistant's own tool, which
