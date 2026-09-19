@@ -174,6 +174,19 @@ The Security Agent scans, reports by severity, and **asks permission** before
 fixing anything. Answer with **Reply to the Agent** — it continues the same
 conversation on the same copy, and only then is there a diff to review.
 
+**What a run costs you.** Nothing in money, if you signed in with a Claude,
+ChatGPT or Google subscription: DigiDev drives the assistant's own tool, which
+uses the account you already have. What it spends is your quota, and the line
+that closes each run says how much of it is gone:
+
+```
+--- done · 7 turn(s) · 23 tool call(s) · quota 34% of 5h, 66% of 7d used ---
+```
+
+You can also choose the model and how hard it thinks, from the gear in the
+Agents panel. Left alone, DigiDev changes nothing — your assistant keeps the
+model you picked in its own tool.
+
 Your own agents go in `~/.digidev/agents/<name>/`: a `SKILL.md` and, if you
 want a title or icon, an `agent.json`.
 

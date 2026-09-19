@@ -177,6 +177,19 @@ avant de corriger quoi que ce soit. Répondez avec **Reply to the Agent** — il
 poursuit la même conversation sur la même copie, et c'est seulement alors qu'il
 y a une différence à examiner.
 
+**Ce que coûte un passage.** Rien en argent, si vous vous êtes connecté avec un
+abonnement Claude, ChatGPT ou Google : DigiDev pilote l'outil de l'assistant,
+qui utilise le compte que vous avez déjà. Ce qu'il consomme, c'est votre quota,
+et la ligne qui clôt chaque passage dit où vous en êtes :
+
+```
+--- done · 7 turn(s) · 23 tool call(s) · quota 34% of 5h, 66% of 7d used ---
+```
+
+Vous pouvez aussi choisir le modèle et le niveau d'effort, depuis l'engrenage du
+panneau Agents. Sans rien toucher, DigiDev ne change rien — votre assistant
+garde le modèle que vous avez choisi dans son propre outil.
+
 Vos propres agents vont dans `~/.digidev/agents/<nom>/` : un `SKILL.md` et, si
 vous voulez un titre ou une icône, un `agent.json`.
 
